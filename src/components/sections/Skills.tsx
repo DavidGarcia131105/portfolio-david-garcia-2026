@@ -1,13 +1,17 @@
 import { useState } from 'react'
+import { useBreakpoint } from '../../hooks/useBreakpoint'
 
 function HoverCard({ children, style }: { children: React.ReactNode; style: React.CSSProperties }) {
   const [hovered, setHovered] = useState(false)
+  const { isMobile } = useBreakpoint()
+  const { gridColumn: _gc, ...rest } = style as React.CSSProperties & { gridColumn?: string }
+  const finalStyle = isMobile ? rest : style
   return (
     <div
       onMouseEnter={() => setHovered(true)}
       onMouseLeave={() => setHovered(false)}
       style={{
-        ...style,
+        ...finalStyle,
         boxShadow: hovered ? '0 0 24px rgba(255,0,56,0.08)' : 'none',
         transition: 'box-shadow 0.3s, border-color 0.3s',
         borderColor: hovered ? 'rgba(255,0,56,0.3)' : (style.borderColor ?? (style.border as string)?.split(' ')[2] ?? '#1a1a1a'),
@@ -19,12 +23,14 @@ function HoverCard({ children, style }: { children: React.ReactNode; style: Reac
 }
 
 export default function Skills() {
-  return (
-    <section id="skills" style={{ padding: '64px 48px', maxWidth: 1200, margin: '0 auto' }}>
-      <p style={{ fontSize: 10, color: '#FF0038', textTransform: 'uppercase', letterSpacing: 2, marginBottom: 6 }}>Expertise</p>
-      <h2 style={{ fontSize: 26, fontWeight: 700, color: '#f0f0f0', margin: '0 0 20px', letterSpacing: -0.5 }}>Tech Stack</h2>
+  const { isMobile } = useBreakpoint()
 
-      <div style={{ display: 'grid', gridTemplateColumns: 'repeat(6, 1fr)', gap: 8 }}>
+  return (
+    <section id="skills" style={{ padding: isMobile ? '48px 24px' : '64px 48px', maxWidth: 1200, margin: '0 auto' }}>
+      <p style={{ fontSize: 10, color: '#FF0038', textTransform: 'uppercase', letterSpacing: 2, marginBottom: 6 }}>Expertise</p>
+      <h2 style={{ fontSize: isMobile ? 22 : 26, fontWeight: 700, color: '#f0f0f0', margin: '0 0 20px', letterSpacing: -0.5 }}>Tech Stack</h2>
+
+      <div style={{ display: 'grid', gridTemplateColumns: isMobile ? '1fr' : 'repeat(6, 1fr)', gap: 8 }}>
 
         <HoverCard style={{ gridColumn: 'span 4', borderRadius: 12, background: '#0d0808', border: '1px solid #FF003822', padding: 18, position: 'relative', overflow: 'hidden' }}>
           <div style={{ position: 'absolute', top: 0, right: 0, width: 40, height: 40, borderBottomLeftRadius: 12, background: '#FF003815', display: 'flex', alignItems: 'center', justifyContent: 'center', fontSize: 16, fontWeight: 800, color: '#FF0038' }}>Re</div>

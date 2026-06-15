@@ -1,5 +1,6 @@
 import { useEffect, useRef, useState } from 'react'
 import { stats } from '../../data/skills'
+import { useBreakpoint } from '../../hooks/useBreakpoint'
 
 function Counter({ target, suffix }: { target: number; suffix: string }) {
   const [count, setCount] = useState(0)
@@ -27,8 +28,9 @@ function Counter({ target, suffix }: { target: number; suffix: string }) {
 }
 
 export default function Stats() {
+  const { isMobile } = useBreakpoint()
   return (
-    <div style={{ display: 'flex', justifyContent: 'center', gap: 48, padding: '0 32px 64px', maxWidth: 1200, margin: '0 auto' }}>
+    <div style={{ display: 'flex', justifyContent: 'center', gap: isMobile ? 24 : 48, padding: isMobile ? '0 24px 48px' : '0 32px 64px', maxWidth: 1200, margin: '0 auto', flexWrap: 'wrap' }}>
       {stats.map((s) => (
         <div key={s.label} style={{ textAlign: 'center' }}>
           <div style={{ fontSize: 36, fontWeight: 800, color: '#FF0038', letterSpacing: -1 }}>

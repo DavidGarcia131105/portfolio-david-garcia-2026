@@ -1,4 +1,5 @@
 import { useState } from 'react'
+import { useBreakpoint } from '../../hooks/useBreakpoint'
 
 type ContactItem = {
   label: string
@@ -37,9 +38,10 @@ function ContactCard({ item }: { item: ContactItem }) {
 }
 
 export default function Contact() {
+  const { isMobile } = useBreakpoint()
   return (
-    <section id="contact" style={{ padding: '64px 48px', maxWidth: 1200, margin: '0 auto' }}>
-      <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: 24, alignItems: 'start' }}>
+    <section id="contact" style={{ padding: isMobile ? '48px 24px' : '64px 48px', maxWidth: 1200, margin: '0 auto' }}>
+      <div style={{ display: 'grid', gridTemplateColumns: isMobile ? '1fr' : '1fr 1fr', gap: isMobile ? 28 : 24, alignItems: 'start' }}>
         <div>
           <p style={{ fontSize: 10, color: '#FF0038', textTransform: 'uppercase', letterSpacing: 2, marginBottom: 6 }}>Contact</p>
           <h2 style={{ fontSize: 26, fontWeight: 700, color: '#f0f0f0', margin: '0 0 12px', letterSpacing: -0.5 }}>

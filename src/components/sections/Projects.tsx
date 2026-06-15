@@ -2,12 +2,15 @@ import { motion } from 'framer-motion'
 import AnimateIn, { staggerContainer } from '../ui/AnimateIn'
 import ProjectCard from '../project/ProjectCard'
 import { projects } from '../../data/projects'
+import { useBreakpoint } from '../../hooks/useBreakpoint'
 
 export default function Projects() {
+  const { isMobile } = useBreakpoint()
+
   return (
-    <section id="projects" style={{ padding: '64px 48px', maxWidth: 1200, margin: '0 auto' }}>
+    <section id="projects" style={{ padding: isMobile ? '48px 24px' : '64px 48px', maxWidth: 1200, margin: '0 auto' }}>
       <AnimateIn>
-        <h2 style={{ fontSize: 28, fontWeight: 700, color: '#f0f0f0', marginBottom: 32 }}>
+        <h2 style={{ fontSize: isMobile ? 22 : 28, fontWeight: 700, color: '#f0f0f0', marginBottom: 32 }}>
           Projects
         </h2>
       </AnimateIn>
@@ -16,7 +19,7 @@ export default function Projects() {
         whileInView="show"
         viewport={{ once: true, amount: 0.1 }}
         variants={staggerContainer}
-        style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fill, minmax(280px, 1fr))', gap: 20 }}
+        style={{ display: 'grid', gridTemplateColumns: isMobile ? '1fr' : 'repeat(auto-fill, minmax(280px, 1fr))', gap: 20 }}
       >
         {projects.map((project) => (
           <ProjectCard key={project.id} project={project} />

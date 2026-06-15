@@ -1,14 +1,25 @@
+import { useBreakpoint } from '../../hooks/useBreakpoint'
+
 export default function About() {
+  const { isMobile } = useBreakpoint()
+
   return (
-    <section id="about" style={{ padding: '64px 48px', maxWidth: 1200, margin: '0 auto' }}>
-      <div style={{ display: 'grid', gridTemplateColumns: '1fr auto', gap: 48, alignItems: 'center' }}>
+    <section id="about" style={{ padding: isMobile ? '48px 24px' : '64px 48px', maxWidth: 1200, margin: '0 auto' }}>
+      <div style={{ display: 'grid', gridTemplateColumns: isMobile ? '1fr' : '1fr auto', gap: isMobile ? 24 : 48, alignItems: 'center' }}>
+
+        {isMobile && (
+          <div style={{ display: 'flex', justifyContent: 'center' }}>
+            <img src="/david.jpeg" alt="David Garcia" style={{ width: 120, height: 120, borderRadius: '50%', objectFit: 'cover', objectPosition: 'center 15%', border: '2px solid rgba(255,0,56,0.25)' }} />
+          </div>
+        )}
+
         <div>
           <div style={{ display: 'inline-flex', alignItems: 'center', gap: 6, background: '#0a1a0a', border: '1px solid #1a4a1a', borderRadius: 20, padding: '4px 12px', fontSize: 11, color: '#4caf50', marginBottom: 16 }}>
             <div style={{ width: 6, height: 6, borderRadius: '50%', background: '#4caf50' }} />
             Open to work
           </div>
           <p style={{ fontSize: 10, color: '#FF0038', textTransform: 'uppercase', letterSpacing: 2, marginBottom: 6 }}>About me</p>
-          <h2 style={{ fontSize: 24, fontWeight: 700, color: '#f0f0f0', margin: '0 0 14px', letterSpacing: -0.5 }}>
+          <h2 style={{ fontSize: isMobile ? 22 : 24, fontWeight: 700, color: '#f0f0f0', margin: '0 0 14px', letterSpacing: -0.5 }}>
             Hey, soy David <span style={{ color: '#FF0038' }}>Garcia</span>
           </h2>
           <p style={{ fontSize: 13, color: '#666', lineHeight: 1.85, margin: '0 0 12px' }}>
@@ -35,13 +46,10 @@ export default function About() {
             ))}
           </div>
         </div>
-        <div>
-          <img
-            src="/david.jpeg"
-            alt="David Garcia"
-            style={{ width: 160, height: 160, borderRadius: '50%', objectFit: 'cover', objectPosition: 'center 15%', border: '2px solid rgba(255,0,56,0.25)' }}
-          />
-        </div>
+
+        {!isMobile && (
+          <img src="/david.jpeg" alt="David Garcia" style={{ width: 160, height: 160, borderRadius: '50%', objectFit: 'cover', objectPosition: 'center 15%', border: '2px solid rgba(255,0,56,0.25)' }} />
+        )}
       </div>
     </section>
   )
