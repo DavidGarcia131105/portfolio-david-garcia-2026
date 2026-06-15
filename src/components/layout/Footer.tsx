@@ -2,8 +2,8 @@ import { useTranslation } from 'react-i18next'
 import { useBreakpoint } from '../../hooks/useBreakpoint'
 
 const socials = [
-  { label: 'in', color: '#54c5f8', href: 'https://linkedin.com/in/david-garcia' },
-  { label: 'Gh', color: 'var(--text)', href: 'https://github.com/davgarcol05' },
+  { label: 'in', color: '#54c5f8', href: 'https://www.linkedin.com/in/david-garcia-cola-726523266/' },
+  { label: 'Gh', color: 'var(--text)', href: 'https://github.com/DavidGarcia131105' },
   { label: '@', color: '#FF0038', href: 'mailto:davgarcol05@gmail.com' },
 ]
 

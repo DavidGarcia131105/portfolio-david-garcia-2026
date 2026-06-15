@@ -13,8 +13,8 @@ type ContactItem = {
 
 const items: ContactItem[] = [
   { label: 'Email', value: 'davgarcol05@gmail.com', href: 'mailto:davgarcol05@gmail.com', color: '#FF0038', bg: 'rgba(255,0,56,0.08)', icon: '@' },
-  { label: 'LinkedIn', value: '/in/david-garcia', href: 'https://linkedin.com/in/david-garcia', color: '#54c5f8', bg: 'rgba(84,197,248,0.08)', icon: 'in' },
-  { label: 'GitHub', value: '/davgarcol05', href: 'https://github.com/davgarcol05', color: 'var(--text)', bg: 'var(--surface-3)', icon: 'Gh' },
+  { label: 'LinkedIn', value: '/in/david-garcia-cola', href: 'https://www.linkedin.com/in/david-garcia-cola-726523266/', color: '#54c5f8', bg: 'rgba(84,197,248,0.08)', icon: 'in' },
+  { label: 'GitHub', value: '/DavidGarcia131105', href: 'https://github.com/DavidGarcia131105', color: 'var(--text)', bg: 'var(--surface-3)', icon: 'Gh' },
 ]
 
 function ContactCard({ item }: { item: ContactItem }) {
