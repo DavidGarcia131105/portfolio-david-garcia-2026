@@ -1,6 +1,6 @@
 export default function Skills() {
   return (
-    <section id="skills" style={{ padding: '64px 32px', maxWidth: 900, margin: '0 auto' }}>
+    <section id="skills" style={{ padding: '64px 48px', maxWidth: 1200, margin: '0 auto' }}>
       <p style={{ fontSize: 10, color: '#FF0038', textTransform: 'uppercase', letterSpacing: 2, marginBottom: 6 }}>Expertise</p>
       <h2 style={{ fontSize: 26, fontWeight: 700, color: '#f0f0f0', margin: '0 0 20px', letterSpacing: -0.5 }}>Tech Stack</h2>
 

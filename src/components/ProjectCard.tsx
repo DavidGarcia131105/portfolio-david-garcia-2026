@@ -1,6 +1,8 @@
 import { useState } from 'react'
+import { motion } from 'framer-motion'
 import type { Project } from '../data/projects'
 import Lightbox from './Lightbox'
+import { staggerItem } from './AnimateIn'
 
 type Props = {
   project: Project
@@ -9,6 +11,7 @@ type Props = {
 export default function ProjectCard({ project }: Props) {
   const [lightboxOpen, setLightboxOpen] = useState(false)
   const [current, setCurrent] = useState(0)
+  const [hovered, setHovered] = useState(false)
 
   const openLightbox = (index: number) => {
     setCurrent(index)
@@ -20,7 +23,12 @@ export default function ProjectCard({ project }: Props) {
 
   return (
     <>
-      <div style={{ background: '#111', border: '1px solid #222', borderRadius: 12, overflow: 'hidden' }}>
+      <motion.div
+        variants={staggerItem}
+        onMouseEnter={() => setHovered(true)}
+        onMouseLeave={() => setHovered(false)}
+        style={{ background: '#111', border: `1px solid ${hovered ? '#FF003850' : '#222'}`, borderRadius: 12, overflow: 'hidden', boxShadow: hovered ? '0 0 24px rgba(255,0,56,0.08)' : 'none', transition: 'border-color 0.3s, box-shadow 0.3s' }}
+      >
         <div
           onClick={() => openLightbox(0)}
           style={{ height: 200, background: '#0d0d0d', display: 'flex', alignItems: 'center', justifyContent: 'center', cursor: 'pointer', position: 'relative' }}
@@ -57,7 +65,7 @@ export default function ProjectCard({ project }: Props) {
             ))}
           </div>
         </div>
-      </div>
+      </motion.div>
 
       {lightboxOpen && (
         <Lightbox

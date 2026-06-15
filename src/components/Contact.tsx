@@ -15,7 +15,7 @@ const items: ContactItem[] = [
 
 export default function Contact() {
   return (
-    <section id="contact" style={{ padding: '64px 32px', maxWidth: 900, margin: '0 auto' }}>
+    <section id="contact" style={{ padding: '64px 48px', maxWidth: 1200, margin: '0 auto' }}>
       <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: 24, alignItems: 'start' }}>
         <div>
           <p style={{ fontSize: 10, color: '#FF0038', textTransform: 'uppercase', letterSpacing: 2, marginBottom: 6 }}>Contact</p>
