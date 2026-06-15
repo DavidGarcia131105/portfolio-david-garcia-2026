@@ -1,17 +1,16 @@
 import { useEffect, useState } from 'react'
 
-const WORDS = ['Web App Developer', 'AI Engineer', 'Freelancer']
 const TYPE_SPEED = 80
 const DELETE_SPEED = 50
 const PAUSE = 1800
 
-export default function TypedText() {
+export function useTypewriter(words: string[]) {
   const [text, setText] = useState('')
   const [wordIndex, setWordIndex] = useState(0)
   const [deleting, setDeleting] = useState(false)
 
   useEffect(() => {
-    const current = WORDS[wordIndex]
+    const current = words[wordIndex]
     const timeout = setTimeout(() => {
       if (!deleting) {
         setText(current.slice(0, text.length + 1))
@@ -20,19 +19,13 @@ export default function TypedText() {
         setText(current.slice(0, text.length - 1))
         if (text.length - 1 === 0) {
           setDeleting(false)
-          setWordIndex((i) => (i + 1) % WORDS.length)
+          setWordIndex((i) => (i + 1) % words.length)
         }
       }
     }, deleting ? DELETE_SPEED : TYPE_SPEED)
 
     return () => clearTimeout(timeout)
-  }, [text, deleting, wordIndex])
+  }, [text, deleting, wordIndex, words])
 
-  return (
-    <span>
-      <span style={{ color: '#FF0038' }}>{text}</span>
-      <span style={{ color: '#FF0038', animation: 'blink 1s step-end infinite' }}>|</span>
-      <style>{`@keyframes blink { 0%,100%{opacity:1} 50%{opacity:0} }`}</style>
-    </span>
-  )
+  return text
 }

@@ -1,6 +1,6 @@
 import { useEffect, useState } from 'react'
 
-export default function ScrollProgress() {
+export function useScrollProgress() {
   const [progress, setProgress] = useState(0)
 
   useEffect(() => {
@@ -12,9 +12,5 @@ export default function ScrollProgress() {
     return () => window.removeEventListener('scroll', update)
   }, [])
 
-  return (
-    <div style={{ position: 'fixed', top: 0, left: 0, right: 0, height: 2, zIndex: 999, background: '#111' }}>
-      <div style={{ height: '100%', width: `${progress}%`, background: '#FF0038', transition: 'width 0.1s linear' }} />
-    </div>
-  )
+  return progress
 }

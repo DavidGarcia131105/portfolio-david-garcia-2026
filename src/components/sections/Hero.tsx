@@ -1,6 +1,6 @@
 import { motion } from 'framer-motion'
-import { fadeUp } from './AnimateIn'
-import TypedText from './TypedText'
+import { fadeUp } from '../ui/AnimateIn'
+import TypedText from '../ui/TypedText'
 
 export default function Hero() {
   return (
