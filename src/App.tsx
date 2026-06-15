@@ -1,7 +1,9 @@
+import Nav from './components/Nav'
+
 function App() {
-  return(
+  return (
     <main>
-      <h1 style={{ color: 'var(--accent)' }}>Portfolio</h1>
+      <Nav />
     </main>
   )
 }
