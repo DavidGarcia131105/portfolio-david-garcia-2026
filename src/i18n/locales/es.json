@@ -1,0 +1,44 @@
+{
+  "nav": {
+    "about": "sobre mí",
+    "projects": "proyectos",
+    "skills": "stack",
+    "contact": "contacto"
+  },
+  "hero": {
+    "roles": ["Desarrollador Web", "Ingeniero de IA", "Freelancer"],
+    "subtitle": "Construyendo productos en la intersección del software y la inteligencia.",
+    "cta_projects": "Ver proyectos",
+    "cta_contact": "Contáctame"
+  },
+  "about": {
+    "badge": "Abierto a oportunidades",
+    "label": "Sobre mí",
+    "title": "Hey, soy David",
+    "p1": "Desarrollador español con experiencia en <strong>aplicaciones web full-stack</strong> e <strong>ingeniería de IA</strong>. Me especializo en construir productos reales — desde apps móviles hasta pipelines de LLMs y agentes inteligentes.",
+    "p2": "Lo que me diferencia es la combinación de ambos mundos: puedo diseñar la arquitectura, desarrollar el frontend e integrar inteligencia artificial. Busco un equipo donde seguir creciendo en ambas disciplinas.",
+    "chip1": "España 🇪🇸",
+    "chip2": "Full-stack + IA",
+    "chip3": "Remote friendly"
+  },
+  "stats": {
+    "app": "App en beta",
+    "years": "Años de experiencia",
+    "available": "Disponible para trabajar"
+  },
+  "projects": {
+    "title": "Proyectos"
+  },
+  "skills": {
+    "label": "Experiencia",
+    "title": "Stack tecnológico"
+  },
+  "contact": {
+    "label": "Contacto",
+    "title": "Trabajemos juntos",
+    "subtitle": "Abierto a nuevas oportunidades y proyectos interesantes. Suelo responder en menos de 24h."
+  },
+  "footer": {
+    "tagline": "España 🇪🇸 · Desarrollador Full-stack + IA"
+  }
+}

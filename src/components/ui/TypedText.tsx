@@ -1,9 +1,10 @@
+import { useTranslation } from 'react-i18next'
 import { useTypewriter } from '../../hooks/useTypewriter'
 
-const WORDS = ['Web App Developer', 'AI Engineer', 'Freelancer']
-
 export default function TypedText() {
-  const text = useTypewriter(WORDS)
+  const { t } = useTranslation()
+  const words = t('hero.roles', { returnObjects: true }) as string[]
+  const text = useTypewriter(words)
 
   return (
     <span>

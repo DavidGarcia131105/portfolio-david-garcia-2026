@@ -1,0 +1,44 @@
+{
+  "nav": {
+    "about": "about",
+    "projects": "projects",
+    "skills": "skills",
+    "contact": "contact"
+  },
+  "hero": {
+    "roles": ["Web App Developer", "AI Engineer", "Freelancer"],
+    "subtitle": "Building products at the intersection of software and intelligence.",
+    "cta_projects": "View projects",
+    "cta_contact": "Contact me"
+  },
+  "about": {
+    "badge": "Open to work",
+    "label": "About me",
+    "title": "Hey, I'm David",
+    "p1": "Spanish developer with experience in <strong>full-stack web applications</strong> and <strong>AI engineering</strong>. I specialize in building real products — from mobile apps to LLM pipelines and intelligent agents.",
+    "p2": "What sets me apart is combining both worlds: I can design the architecture, build the frontend and integrate artificial intelligence. I'm looking for a team where I can keep growing in both disciplines.",
+    "chip1": "Spain 🇪🇸",
+    "chip2": "Full-stack + AI",
+    "chip3": "Remote friendly"
+  },
+  "stats": {
+    "app": "App in beta",
+    "years": "Years of experience",
+    "available": "Available for work"
+  },
+  "projects": {
+    "title": "Projects"
+  },
+  "skills": {
+    "label": "Expertise",
+    "title": "Tech Stack"
+  },
+  "contact": {
+    "label": "Contact",
+    "title": "Let's work together",
+    "subtitle": "Open to new opportunities and interesting projects. I usually reply within 24h."
+  },
+  "footer": {
+    "tagline": "Spain 🇪🇸 · Full-stack + AI Engineer"
+  }
+}

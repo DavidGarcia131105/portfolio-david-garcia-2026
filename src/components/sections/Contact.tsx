@@ -1,4 +1,5 @@
 import { useState } from 'react'
+import { useTranslation } from 'react-i18next'
 import { useBreakpoint } from '../../hooks/useBreakpoint'
 
 type ContactItem = {
@@ -39,16 +40,17 @@ function ContactCard({ item }: { item: ContactItem }) {
 
 export default function Contact() {
   const { isMobile } = useBreakpoint()
+  const { t } = useTranslation()
   return (
     <section id="contact" style={{ padding: isMobile ? '48px 24px' : '64px 48px', maxWidth: 1200, margin: '0 auto' }}>
       <div style={{ display: 'grid', gridTemplateColumns: isMobile ? '1fr' : '1fr 1fr', gap: isMobile ? 28 : 24, alignItems: 'start' }}>
         <div>
-          <p style={{ fontSize: 10, color: '#FF0038', textTransform: 'uppercase', letterSpacing: 2, marginBottom: 6 }}>Contact</p>
+          <p style={{ fontSize: 10, color: '#FF0038', textTransform: 'uppercase', letterSpacing: 2, marginBottom: 6 }}>{t('contact.label')}</p>
           <h2 style={{ fontSize: 26, fontWeight: 700, color: '#f0f0f0', margin: '0 0 12px', letterSpacing: -0.5 }}>
-            Let's work together
+            {t('contact.title')}
           </h2>
           <p style={{ fontSize: 13, color: '#555', margin: 0, lineHeight: 1.7 }}>
-            Open to new opportunities and interesting projects. I usually reply within 24h.
+            {t('contact.subtitle')}
           </p>
         </div>
         <div style={{ display: 'flex', flexDirection: 'column', gap: 8 }}>

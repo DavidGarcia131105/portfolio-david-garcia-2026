@@ -1,4 +1,5 @@
 import { useState } from 'react'
+import { useTranslation } from 'react-i18next'
 import { useBreakpoint } from '../../hooks/useBreakpoint'
 
 function HoverCard({ children, style }: { children: React.ReactNode; style: React.CSSProperties }) {
@@ -24,11 +25,12 @@ function HoverCard({ children, style }: { children: React.ReactNode; style: Reac
 
 export default function Skills() {
   const { isMobile } = useBreakpoint()
+  const { t } = useTranslation()
 
   return (
     <section id="skills" style={{ padding: isMobile ? '48px 24px' : '64px 48px', maxWidth: 1200, margin: '0 auto' }}>
-      <p style={{ fontSize: 10, color: '#FF0038', textTransform: 'uppercase', letterSpacing: 2, marginBottom: 6 }}>Expertise</p>
-      <h2 style={{ fontSize: isMobile ? 22 : 26, fontWeight: 700, color: '#f0f0f0', margin: '0 0 20px', letterSpacing: -0.5 }}>Tech Stack</h2>
+      <p style={{ fontSize: 10, color: '#FF0038', textTransform: 'uppercase', letterSpacing: 2, marginBottom: 6 }}>{t('skills.label')}</p>
+      <h2 style={{ fontSize: isMobile ? 22 : 26, fontWeight: 700, color: '#f0f0f0', margin: '0 0 20px', letterSpacing: -0.5 }}>{t('skills.title')}</h2>
 
       <div style={{ display: 'grid', gridTemplateColumns: isMobile ? '1fr' : 'repeat(6, 1fr)', gap: 8 }}>
 

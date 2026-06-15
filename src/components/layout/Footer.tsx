@@ -1,3 +1,4 @@
+import { useTranslation } from 'react-i18next'
 import { useBreakpoint } from '../../hooks/useBreakpoint'
 
 const socials = [
@@ -8,6 +9,7 @@ const socials = [
 
 export default function Footer() {
   const { isMobile } = useBreakpoint()
+  const { t } = useTranslation()
 
   return (
     <footer style={{ background: '#080808', padding: isMobile ? '20px 24px' : '24px 48px' }}>
@@ -25,7 +27,7 @@ export default function Footer() {
       </div>
       <div style={{ height: 1, background: '#111', marginBottom: 12 }} />
       <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', flexDirection: isMobile ? 'column' : 'row', gap: isMobile ? 4 : 0 }}>
-        <span style={{ fontSize: 10, color: '#333' }}>España 🇪🇸 · Full-stack + AI Engineer</span>
+        <span style={{ fontSize: 10, color: '#333' }}>{t('footer.tagline')}</span>
         <span style={{ fontSize: 10, color: '#333' }}>© {new Date().getFullYear()}</span>
       </div>
     </footer>
