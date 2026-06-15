@@ -12,7 +12,7 @@ export default function Projects() {
   return (
     <section id="projects" style={{ padding: isMobile ? '48px 24px' : '64px 48px', maxWidth: 1200, margin: '0 auto' }}>
       <AnimateIn>
-        <h2 style={{ fontSize: isMobile ? 22 : 28, fontWeight: 700, color: '#f0f0f0', marginBottom: 32 }}>
+        <h2 style={{ fontSize: isMobile ? 22 : 28, fontWeight: 700, color: '#FF0038', marginBottom: 32 }}>
           {t('projects.title')}
         </h2>
       </AnimateIn>

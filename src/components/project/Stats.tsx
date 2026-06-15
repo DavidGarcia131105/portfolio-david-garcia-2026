@@ -41,7 +41,7 @@ export default function Stats() {
           <div style={{ fontSize: 36, fontWeight: 800, color: '#FF0038', letterSpacing: -1 }}>
             <Counter target={s.value} suffix={s.suffix} />
           </div>
-          <div style={{ fontSize: 11, color: '#555', marginTop: 4 }}>{t(`stats.${STAT_KEYS[i]}`)}</div>
+          <div style={{ fontSize: 11, color: 'var(--muted)', marginTop: 4 }}>{t(`stats.${STAT_KEYS[i]}`)}</div>
         </div>
       ))}
     </div>

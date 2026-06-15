@@ -24,15 +24,15 @@ export default function Lightbox({ images, current, title, onClose, onPrev, onNe
     <div onClick={onClose} style={{ position: 'fixed', inset: 0, background: 'rgba(0,0,0,0.92)', zIndex: 999, display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
       <div onClick={(e) => e.stopPropagation()} style={{ position: 'relative', display: 'flex', flexDirection: 'column', alignItems: 'center', gap: 16 }}>
         <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', width: '100%' }}>
-          <span style={{ fontSize: 13, color: '#888' }}>{title}</span>
-          <button onClick={onClose} style={{ background: '#222', border: 'none', color: '#f0f0f0', borderRadius: 6, padding: '4px 10px', cursor: 'pointer', fontSize: 13 }}>✕ esc</button>
+          <span style={{ fontSize: 13, color: 'var(--muted)' }}>{title}</span>
+          <button onClick={onClose} style={{ background: 'var(--surface)', border: '1px solid var(--border)', color: 'var(--text)', borderRadius: 6, padding: '4px 10px', cursor: 'pointer', fontSize: 13 }}>✕ esc</button>
         </div>
         <div style={{ position: 'relative', display: 'flex', alignItems: 'center', gap: 16 }}>
-          <button onClick={onPrev} style={{ background: '#1a1a1a', border: '1px solid #333', color: '#f0f0f0', borderRadius: 8, width: 40, height: 40, fontSize: 20, cursor: 'pointer' }}>‹</button>
+          <button onClick={onPrev} style={{ background: 'var(--surface)', border: '1px solid var(--border)', color: 'var(--text)', borderRadius: 8, width: 40, height: 40, fontSize: 20, cursor: 'pointer' }}>‹</button>
           <img src={images[current]} alt={`${title} ${current + 1}`} style={{ maxHeight: '80vh', maxWidth: '60vw', borderRadius: 12, objectFit: 'contain' }} />
-          <button onClick={onNext} style={{ background: '#1a1a1a', border: '1px solid #333', color: '#f0f0f0', borderRadius: 8, width: 40, height: 40, fontSize: 20, cursor: 'pointer' }}>›</button>
+          <button onClick={onNext} style={{ background: 'var(--surface)', border: '1px solid var(--border)', color: 'var(--text)', borderRadius: 8, width: 40, height: 40, fontSize: 20, cursor: 'pointer' }}>›</button>
         </div>
-        <span style={{ fontSize: 12, color: '#555' }}>{current + 1} / {images.length}</span>
+        <span style={{ fontSize: 12, color: 'var(--hint)' }}>{current + 1} / {images.length}</span>
       </div>
     </div>
   )
