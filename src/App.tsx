@@ -4,9 +4,11 @@ import ProjectCard from './components/ProjectCard'
 import { projects } from './data/projects'
 import Skills from './components/Skills'
 import Contact from './components/Contact'
+import Footer from './components/Footer'
 
 function App() {
   return (
+    <>
     <main>
       <Nav />
       <Hero />
@@ -29,6 +31,8 @@ function App() {
         <Contact/>
       </section>
     </main>
+    <Footer />
+    </>
   )
 }
 
