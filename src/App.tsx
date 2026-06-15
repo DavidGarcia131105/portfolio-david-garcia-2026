@@ -3,6 +3,7 @@ import Hero from './components/Hero'
 import ProjectCard from './components/ProjectCard'
 import { projects } from './data/projects'
 import Skills from './components/Skills'
+import Contact from './components/Contact'
 
 function App() {
   return (
@@ -23,6 +24,9 @@ function App() {
       </section>
       <section>
         <Skills />
+      </section>
+      <section>
+        <Contact/>
       </section>
     </main>
   )
